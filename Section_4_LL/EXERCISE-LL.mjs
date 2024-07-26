@@ -67,24 +67,28 @@ export class LinkedList {
   pop() {
     if (!this.head) {
       return null;
-    } else if (this.length === 1) {
-      const node = this.tail;
-      this.makeEmpty();
-      return node;
-    } else {
-      let prev = null;
-      let current = this.head;
-
-      while (current.next) {
-        prev = current;
-        current = current.next;
-      }
-
-      this.tail = prev;
-      this.tail.next = null;
-      this.length--;
-
-      return current;
     }
+
+    if (this.length === 1) {
+      const node = this.tail;
+
+      this.makeEmpty();
+
+      return node;
+    }
+
+    let prev = null;
+    let current = this.head;
+
+    while (current.next) {
+      prev = current;
+      current = current.next;
+    }
+
+    this.tail = prev;
+    this.tail.next = null;
+    this.length--;
+
+    return current;
   }
 }
