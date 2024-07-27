@@ -127,4 +127,15 @@ export class LinkedList {
 
     return node;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+
+    let node = this.head;
+
+    for (let i = 1; i <= index; i++) {
+      node = node.next;
+    }
+    return node;
+  }
 }

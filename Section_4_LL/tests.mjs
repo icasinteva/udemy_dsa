@@ -101,3 +101,21 @@ testShift();
     null
 
 */
+
+function testGet() {
+    let myLinkedList = new LinkedList(0);
+    myLinkedList.push(1);
+    myLinkedList.push(2);
+    myLinkedList.push(3);
+  
+    console.log(myLinkedList.get(3).value);
+  }
+  
+  testGet();
+  
+  /*
+      EXPECTED OUTPUT:
+      ----------------
+      3
+  
+  */
