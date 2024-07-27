@@ -107,4 +107,24 @@ export class LinkedList {
 
     return this;
   }
+
+  shift() {
+    if (!this.head) {
+      return null;
+    }
+
+    const node = this.head;
+
+    node.next = null;
+
+    this.head = this.head.next;
+
+    this.length--;
+
+    if (!this.length) {
+      this.tail = null;
+    }
+
+    return node;
+  }
 }
