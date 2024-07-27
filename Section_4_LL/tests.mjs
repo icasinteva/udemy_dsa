@@ -103,19 +103,53 @@ testShift();
 */
 
 function testGet() {
-    let myLinkedList = new LinkedList(0);
-    myLinkedList.push(1);
-    myLinkedList.push(2);
-    myLinkedList.push(3);
-  
-    console.log(myLinkedList.get(3).value);
-  }
-  
-  testGet();
-  
-  /*
+  let myLinkedList = new LinkedList(0);
+  myLinkedList.push(1);
+  myLinkedList.push(2);
+  myLinkedList.push(3);
+
+  console.log(myLinkedList.get(3).value);
+}
+
+testGet();
+
+/*
       EXPECTED OUTPUT:
       ----------------
       3
   
   */
+
+function testSet() {
+  let myLinkedList = new LinkedList(0);
+  myLinkedList.push(1);
+  myLinkedList.push(2);
+  myLinkedList.push(3);
+
+  console.log("Linked List before set():");
+  myLinkedList.printList();
+
+  myLinkedList.set(2, 99);
+
+  console.log("\nLinked List after set():");
+  myLinkedList.printList();
+}
+
+testSet();
+
+/*
+    EXPECTED OUTPUT:
+    ----------------
+    Linked List before set():
+    0
+    1
+    2
+    3
+    
+    Linked List after set():
+    0
+    1
+    99
+    3
+
+*/

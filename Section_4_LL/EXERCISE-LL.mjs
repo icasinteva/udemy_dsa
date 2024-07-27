@@ -138,4 +138,22 @@ export class LinkedList {
     }
     return node;
   }
+  set(index, value) {
+    let temp = this.get(index);
+    
+    if (temp) {
+      temp.value = value;
+      return true;
+    }
+    return false;
+  }
 }
+
+const myList = new LinkedList(3);
+myList.push(11);
+myList.push(4);
+myList.getTail();
+
+myList.set(myList.length - 1, 5);
+
+myList.getTail();
