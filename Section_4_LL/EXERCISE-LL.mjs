@@ -91,4 +91,69 @@ export class LinkedList {
 
     return current;
   }
+
+  unshift(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+
+    this.length++;
+
+    return this;
+  }
+
+  shift() {
+    if (!this.head) {
+      return null;
+    }
+
+    const node = this.head;
+
+    node.next = null;
+
+    this.head = this.head.next;
+
+    this.length--;
+
+    if (!this.length) {
+      this.tail = null;
+    }
+
+    return node;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+
+    let node = this.head;
+
+    for (let i = 1; i <= index; i++) {
+      node = node.next;
+    }
+    return node;
+  }
+  set(index, value) {
+    let temp = this.get(index);
+    
+    if (temp) {
+      temp.value = value;
+      return true;
+    }
+    return false;
+  }
 }
+
+const myList = new LinkedList(3);
+myList.push(11);
+myList.push(4);
+myList.getTail();
+
+myList.set(myList.length - 1, 5);
+
+myList.getTail();
