@@ -23,22 +23,22 @@ export class LinkedList {
 
   getHead() {
     if (this.head === null) {
-      console.log("Head: null");
+      console.log('Head: null');
     } else {
-      console.log("Head: " + this.head.value);
+      console.log('Head: ' + this.head.value);
     }
   }
 
   getTail() {
     if (this.tail === null) {
-      console.log("Tail: null");
+      console.log('Tail: null');
     } else {
-      console.log("Tail: " + this.tail.value);
+      console.log('Tail: ' + this.tail.value);
     }
   }
 
   getLength() {
-    console.log("Length: " + this.length);
+    console.log('Length: ' + this.length);
   }
 
   makeEmpty() {
@@ -140,12 +140,56 @@ export class LinkedList {
   }
   set(index, value) {
     let temp = this.get(index);
-    
+
     if (temp) {
       temp.value = value;
       return true;
     }
     return false;
+  }
+
+  insert(index, value) {
+    if (index < 0 || index > this.legth) return false;
+
+    if (!index) {
+      return this.unshift(value);
+    }
+
+    if (index === this.length) {
+      return this.push(value);
+    }
+
+    const newNode = new Node(value);
+    const before = this.get(index - 1);
+
+    newNode.next = before.next;
+    before.next = newNode;
+
+    this.length++;
+
+    return true;
+  }
+
+  remove(index, value) {
+    if (index < 0 || index >= this.length) return null;
+
+    if (!index) {
+      return this.shift();
+    }
+
+    if (index === this.length - 1) {
+      return this.pop();
+    }
+
+    const before = this.get(index - 1);
+    const temp = before.next;
+
+    before.next = temp.next;
+    temp.next = null;
+
+    this.length--;
+
+    return temp;
   }
 }
 
