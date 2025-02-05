@@ -1,4 +1,4 @@
-import { LinkedList as MyLinkedList } from '../../interview-exercises-base.mjs';
+import { LinkedList as MyLinkedList } from '../interview-exercises-base.mjs';
 
 MyLinkedList.prototype.findMiddleNode = function findMiddleNode() {
   if (!this.head) return null;
