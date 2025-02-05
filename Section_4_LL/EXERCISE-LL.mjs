@@ -115,15 +115,16 @@ export class LinkedList {
 
     const node = this.head;
 
-    node.next = null;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
 
-    this.head = this.head.next;
+      node.next = null;
+    }
 
     this.length--;
-
-    if (!this.length) {
-      this.tail = null;
-    }
 
     return node;
   }
