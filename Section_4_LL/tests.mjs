@@ -205,3 +205,48 @@ function testInsert() {
 }
 
 testInsert();
+
+function testRemove() {
+  let myLinkedList = new LinkedList(1);
+  myLinkedList.push(2);
+  myLinkedList.push(3);
+  myLinkedList.push(4);
+  myLinkedList.push(5);
+
+  console.log('LL before remove():');
+  myLinkedList.printList();
+
+  console.log('\nRemoved node:');
+  console.log(myLinkedList.remove(2).value);
+  console.log('LL after remove() in middle:');
+  myLinkedList.printList();
+
+  console.log('\nRemoved node:');
+  console.log(myLinkedList.remove(0).value);
+  console.log('LL after remove() of first node:');
+  myLinkedList.printList();
+
+  console.log('\nRemoved node:');
+  console.log(myLinkedList.remove(2).value);
+  console.log('LL after remove() of last node:');
+  myLinkedList.printList();
+}
+
+testRemove();
+
+function testReverse() {
+  let myLinkedList = new LinkedList(1);
+  myLinkedList.push(2);
+  myLinkedList.push(3);
+  myLinkedList.push(4);
+
+  console.log('LL before reverse():');
+  myLinkedList.printList();
+
+  myLinkedList.reverse();
+
+  console.log('\nLL after reverse():');
+  myLinkedList.printList();
+}
+
+testReverse();

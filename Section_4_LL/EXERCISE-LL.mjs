@@ -192,6 +192,25 @@ export class LinkedList {
 
     return temp;
   }
+
+  reverse() {
+    if (this.head) {
+      let prev = null;
+      let current = this.head;
+      let next;
+      
+      [this.head, this.tail] = [this.tail, this.head];
+
+      while (current) {
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+      }
+
+      return this;
+    }
+  }
 }
 
 const myList = new LinkedList(3);
