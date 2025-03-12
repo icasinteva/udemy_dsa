@@ -179,3 +179,21 @@ function testShift() {
 }
 
 testShift();
+
+function testGet() {
+  let myDLL = new DoublyLinkedList(0);
+  myDLL.push(1);
+  myDLL.push(2);
+  myDLL.push(3);
+
+  console.log(myDLL.get(3).value);
+
+  /*
+    EXPECTED OUTPUT:
+    ----------------
+    3
+
+*/
+}
+
+testGet();

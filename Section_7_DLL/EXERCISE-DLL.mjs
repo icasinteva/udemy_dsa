@@ -116,4 +116,26 @@ export class DoublyLinkedList {
 
     return tmp;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+
+    const middle = Math.floor(this.length / 2);
+
+    let current = this.head;
+
+    if (index < middle) {
+      for (let i = 0; i < index; i++) {
+        current = current.next;
+      }
+    } else {
+      current = this.tail;
+
+      for (let i = this.length - 1; i > index; i--) {
+        current = current.prev;
+      }
+    }
+
+    return current;
+  }
 }
