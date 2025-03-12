@@ -11,7 +11,7 @@ function test() {
   myDLL.printList();
 }
 
-test();
+//test();
 
 /*
     EXPECTED OUTPUT:
@@ -50,4 +50,41 @@ function testPush() {
 */
 }
 
-testPush();
+//testPush();
+
+function testPop() {
+  let myDLL = new DoublyLinkedList(1);
+  myDLL.push(2);
+
+  // (2) Items in LL - Returns 2 Node
+  if (myDLL.length !== 0) {
+    console.log(myDLL.pop().value);
+  } else {
+    console.log('null');
+  }
+
+  // (1) Item in LL - Returns 1 Node
+  if (myDLL.length !== 0) {
+    console.log(myDLL.pop().value);
+  } else {
+    console.log('null');
+  }
+
+  // (0) Items in LL - Returns null
+  if (myDLL.length !== 0) {
+    console.log(myDLL.pop().value);
+  } else {
+    console.log('null');
+  }
+
+  /*
+    EXPECTED OUTPUT:
+    ----------------
+    2
+    1
+    null
+
+*/
+}
+
+testPop();
