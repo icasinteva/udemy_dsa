@@ -42,4 +42,22 @@ export class DoublyLinkedList {
   getLength() {
     console.log('Length: ' + this.length);
   }
+
+  push(value) {
+    const newNode = new Node(value);
+
+    if (!this.length) {
+      this.head = newNode;
+      this.tail = newNode;
+      this.length = 1;
+    } else {
+      newNode.prev = this.tail;
+      this.tail.next = newNode;
+      this.tail = newNode;
+
+      this.length++;
+    }
+
+    return this;
+  }
 }
