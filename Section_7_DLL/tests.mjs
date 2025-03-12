@@ -88,3 +88,57 @@ function testPop() {
 }
 
 testPop();
+
+function testUnshift() {
+  let myDLL = new DoublyLinkedList(2);
+  myDLL.push(3);
+
+  console.log('Before unshift():');
+  console.log('-----------------');
+  myDLL.getHead();
+  myDLL.getTail();
+  myDLL.getLength();
+
+  console.log('\nDoubly Linked List:');
+  myDLL.printList();
+
+  myDLL.unshift(1);
+
+  console.log('\n\nAfter unshift():');
+  console.log('----------------');
+  myDLL.getHead();
+  myDLL.getTail();
+  myDLL.getLength();
+
+  console.log('\nDoubly Linked List:');
+  myDLL.printList();
+
+  /*
+    EXPECTED OUTPUT:
+
+    Before unshift():
+    -----------------
+    Head: 2
+    Tail: 3
+    Length: 2
+
+    Doubly Linked List:
+    2
+    3
+
+
+    After unshift():
+    ----------------
+    Head: 1
+    Tail: 3
+    Length: 3
+
+    Doubly Linked List:
+    1
+    2
+    3
+
+*/
+}
+
+testUnshift();
