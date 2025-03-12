@@ -150,4 +150,32 @@ export class DoublyLinkedList {
 
     return false;
   }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+
+    if (index === 0) {
+      this.unshift(value);
+
+      return true;
+    }
+    if (index === this.length) {
+      this.push(value);
+
+      return true;
+    }
+
+    const newNode = new Node(value);
+    const after = this.get(index);
+    const before = after.prev;
+
+    newNode.prev = before;
+    newNode.next = after;
+    before.next = newNode;
+    after.prev = newNode;
+
+    this.length++;
+
+    return true;
+  }
 }

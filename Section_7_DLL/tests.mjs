@@ -231,3 +231,55 @@ function testSet() {
 }
 
 testSet();
+
+function testInsert() {
+  let myDLL = new DoublyLinkedList(1);
+  myDLL.push(3);
+
+  console.log('DLL before insert():');
+  myDLL.printList();
+
+  myDLL.insert(1, 2);
+
+  console.log('\nDLL after insert(2) in middle:');
+  myDLL.printList();
+
+  myDLL.insert(0, 0);
+
+  console.log('\nDLL after insert(0) at beginning:');
+  myDLL.printList();
+
+  myDLL.insert(4, 4);
+
+  console.log('\nDLL after insert(4) at end:');
+  myDLL.printList();
+
+  /*
+    EXPECTED OUTPUT:
+    ----------------
+    DLL before insert():
+    1
+    3
+
+    DLL after insert(2) in middle:
+    1
+    2
+    3
+
+    DLL after insert(0) at beginning:
+    0
+    1
+    2
+    3
+
+    DLL after insert(4) at end:
+    0
+    1
+    2
+    3
+    4
+
+*/
+}
+
+testInsert();
