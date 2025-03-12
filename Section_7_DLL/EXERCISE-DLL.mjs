@@ -96,4 +96,24 @@ export class DoublyLinkedList {
 
     return this;
   }
+
+  shift() {
+    if (!this.length) return undefined;
+
+    const tmp = this.head;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
+      this.head.prev = null;
+    }
+
+    tmp.next = null;
+
+    this.length--;
+
+    return tmp;
+  }
 }

@@ -87,7 +87,7 @@ function testPop() {
 */
 }
 
-testPop();
+// testPop();
 
 function testUnshift() {
   let myDLL = new DoublyLinkedList(2);
@@ -141,4 +141,41 @@ function testUnshift() {
 */
 }
 
-testUnshift();
+// testUnshift();
+
+function testShift() {
+  let myDLL = new DoublyLinkedList(2);
+  myDLL.push(1);
+
+  // (2) Items in LL - Returns 2 Node
+  if (myDLL.length !== 0) {
+    console.log(myDLL.shift().value);
+  } else {
+    console.log('null');
+  }
+
+  // (1) Item in LL - Returns 1 Node
+  if (myDLL.length !== 0) {
+    console.log(myDLL.shift().value);
+  } else {
+    console.log('null');
+  }
+
+  // (0) Items in LL - Returns null
+  if (myDLL.length !== 0) {
+    console.log(myDLL.shift().value);
+  } else {
+    console.log('null');
+  }
+
+  /*
+    EXPECTED OUTPUT:
+    ----------------
+    2
+    1
+    null
+
+*/
+}
+
+testShift();
