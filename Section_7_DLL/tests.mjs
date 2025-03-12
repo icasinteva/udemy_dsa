@@ -197,3 +197,37 @@ function testGet() {
 }
 
 testGet();
+
+function testSet() {
+  let myDLL = new DoublyLinkedList(0);
+  myDLL.push(1);
+  myDLL.push(2);
+  myDLL.push(3);
+
+  console.log('DLL before set():');
+  myDLL.printList();
+
+  myDLL.set(2, 99);
+
+  console.log('\nDLL after set():');
+  myDLL.printList();
+
+  /*
+    EXPECTED OUTPUT:
+    ----------------
+    DLL before set():
+    0
+    1
+    2
+    3
+
+    DLL after set():
+    0
+    1
+    99
+    3
+
+*/
+}
+
+testSet();
